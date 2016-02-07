@@ -46,7 +46,7 @@ describe OmniAuth::Strategies::Matique do
 	subject.options.client_options.token_url
     end
 
-    describe "should be overrideable" do
+    describe "should be overwritable" do
       it "for site" do
 	assert_equal enterprise_site, enterprise.options.client_options.site
       end
