@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OmniAuth::Strategies::GitHub do
+describe OmniAuth::Strategies::Matique do
   let(:access_token) { stub('AccessToken', :options => {}) }
   let(:parsed_response) { stub('ParsedResponse') }
   let(:response) { stub('Response', :parsed => parsed_response) }
@@ -9,7 +9,7 @@ describe OmniAuth::Strategies::GitHub do
   let(:enterprise_authorize_url) { 'https://some.other.site.com/login/oauth/authorize' }
   let(:enterprise_token_url)     { 'https://some.other.site.com/login/oauth/access_token' }
   let(:enterprise) do
-    OmniAuth::Strategies::GitHub.new('GITHUB_KEY', 'GITHUB_SECRET',
+    OmniAuth::Strategies::Matique.new('GITHUB_KEY', 'GITHUB_SECRET',
         {
             :client_options => {
                 :site => enterprise_site,
@@ -21,7 +21,7 @@ describe OmniAuth::Strategies::GitHub do
   end
 
   subject do
-    OmniAuth::Strategies::GitHub.new({})
+    OmniAuth::Strategies::Matique.new({})
   end
 
   before(:each) do
@@ -135,7 +135,7 @@ describe OmniAuth::Strategies::GitHub do
   context '#info.urls' do
     it 'should use html_url from raw_info' do
       subject.stub(:raw_info).and_return({ 'login' => 'me', 'html_url' => 'http://enterprise/me' })
-      subject.info['urls']['GitHub'].should == 'http://enterprise/me'
+      subject.info['urls']['Matique'].should == 'http://enterprise/me'
     end
   end
 
