@@ -1,7 +1,8 @@
+# based on omniauth-github
+
 require "minitest/autorun"
 require 'omniauth'
 require 'omniauth-matique'
-
 
 describe OmniAuth::Strategies::Matique do
 #  let(:access_token) { stub('AccessToken', :options => {}) }
@@ -11,13 +12,13 @@ describe OmniAuth::Strategies::Matique do
   let(:enterprise_token_url)     { 'https://some.other.site.com/login/oauth/access_token' }
   let(:enterprise) do
     OmniAuth::Strategies::Matique.new('KEY', 'SECRET',
-        {
-            :client_options => {
-                :site => enterprise_site,
-                :authorize_url => enterprise_authorize_url,
-                :token_url => enterprise_token_url
-            }
-        }
+      {
+	client_options: {
+	  site: enterprise_site,
+	  authorize_url: enterprise_authorize_url,
+	  token_url: enterprise_token_url
+	}
+      }
     )
   end
 
