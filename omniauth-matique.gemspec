@@ -16,12 +16,11 @@ Gem::Specification.new do |gem|
   gem.version       = OmniAuth::Matique::VERSION
 
   gem.add_dependency 'omniauth'
- # Nothing lower than omniauth-oauth2 1.1.1
- # http://www.rubysec.com/advisories/CVE-2012-6134/
   gem.add_dependency 'omniauth-oauth2'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rack-test'
   gem.add_development_dependency 'simplecov'
-#  gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'minitest'
+  gem.add_development_dependency 'mocha'
+  gem.add_development_dependency 'rake'
 end

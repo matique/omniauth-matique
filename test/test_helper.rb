@@ -1,7 +1,7 @@
 require 'bundler/setup'
 require 'minitest/autorun'
 require 'mocha/setup'
-require 'omniauth/strategies/clef'
+require 'omniauth/strategies/matique'
 
 OmniAuth.config.test_mode = true
 
@@ -25,7 +25,7 @@ module CustomAssertions
   end
 end
 
-class TestCase < MiniTest::Unit::TestCase
+class TestCase < MiniTest::Test
   extend BlockTestHelper
   include CustomAssertions
 end
@@ -44,7 +44,7 @@ class StrategyTestCase < TestCase
   def strategy
     @strategy ||= begin
       args = [@client_id, @client_secret, @options].compact
-      OmniAuth::Strategies::Clef.new(nil, *args).tap do |strategy|
+      OmniAuth::Strategies::Matique.new(nil, *args).tap do |strategy|
         strategy.stubs(:request).returns(@request)
       end
     end

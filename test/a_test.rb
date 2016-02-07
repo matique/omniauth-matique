@@ -1,5 +1,5 @@
-require 'helper'
-require 'omniauth-clef'
+require 'test_helper'
+require 'omniauth-matique'
 
 class StrategyTest < StrategyTestCase
   include OAuth2StrategyTests
