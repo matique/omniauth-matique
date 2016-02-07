@@ -1,18 +1,24 @@
 require "minitest/autorun"
+require 'omniauth'
+require 'omniauth-matique'
 
-class Worker < SimpleDelegator
-  include ::Minitest::Expectations
 
-  def work
+describe OmniAuth::Strategies::Matique do
+#  let(:access_token) { stub('AccessToken', :options => {}) }
+
+  subject do
+    OmniAuth::Strategies::Matique.new({})
   end
-end
 
-describe Worker do
   before do
-    @worker = Worker.new(Object.new)
+#    @meme = MiniTest::Mock.new
+#    @meme_asker = MemeAsker.new @meme
   end
 
-  it "must respond to work" do
-    @worker.must_respond_to :work
+  describe "client options" do
+    it 'should have correct site' do
+assert_equal 'https://matique.de', subject.options.client_options.site
+    end
   end
+
 end
