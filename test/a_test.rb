@@ -1,19 +1,10 @@
 require 'test_helper'
 require 'omniauth-matique'
 
+# based on omniauth-github, omniauth-clef and others
+
 class StrategyTest < StrategyTestCase
   include OAuth2StrategyTests
-end
-
-class ClientTest < StrategyTestCase
-  test 'has correct Matique site' do
-    assert_equal 'https://lvh.me', strategy.client.site
-  end
-
-  test 'has correct token url' do
-    assert_equal 'https://lvh.me/auth/matique/access_token',
-	strategy.client.options[:token_url]
-  end
 end
 
 class UidTest < StrategyTestCase
@@ -36,6 +27,28 @@ class InfoTestOptionalDataPresent < StrategyTestCase
 
   test 'returns the email' do
     assert_equal 'test@example.com', strategy.info['email']
+  end
+end
+
+describe OmniAuth::Strategies::Matique do
+  let(:over) do
+    OmniAuth::Strategies::Matique.new('KEY', 'SECRET',
+      {
+	client_options: {
+	  site: 'S',
+	  authorize_url: 'A',
+	  token_url: 'T'
+	}
+      }
+    )
+  end
+
+  describe "client options" do
+    it "should be overwritable" do
+      assert_equal 'S', over.options.client_options.site
+      assert_equal 'A', over.options.client_options.authorize_url
+      assert_equal 'T', over.options.client_options.token_url
+    end
   end
 end
 
