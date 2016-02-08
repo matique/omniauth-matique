@@ -12,6 +12,7 @@ describe OmniAuth::Strategies::Matique, 'raw_info test' do
   let(:access_token) { stub('OAuth2::AccessToken') }
 
   def setup
+    super
     strategy.stubs(:access_token).returns(access_token)
   end
 

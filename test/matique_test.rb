@@ -30,6 +30,7 @@ describe OmniAuth::Strategies::Matique do
 
   describe 'raw_info' do
     def setup
+      super
       @raw_info ||= {
 	'email' => 'test@example.com',
 	'id' => '123'
