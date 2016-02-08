@@ -24,16 +24,10 @@ p 22222222
       end
 
       def raw_info
-p 1111111111111111111
-#        @raw_info ||= access_token.get(
-#          "/auth/sso/user.json?oauth_token=#{access_token.token}").parsed
 ## github
 #access_token.options[:mode] = :query
 #@raw_info ||= access_token.get('user').parsed
 	@raw_info ||= access_token.get('info').parsed || {}
-##        @raw_info ||= access_token.get('user').parsed || {}
-#        @raw_info = @raw_info['info'] if !@raw_info['info'].nil?
-#        @raw_info
       end
 
     end

@@ -1,27 +1,27 @@
+# inspired by omniauth-github, omniauth-clef and others
+
 require 'test_helper'
 require 'omniauth-matique'
-
-# based on omniauth-github, omniauth-clef and others
 
 class StrategyTest < StrategyTestCase
   include OAuth2StrategyTests
 end
 
-class RawInfoTest < StrategyTestCase
+describe OmniAuth::Strategies::Matique, 'raw_info test' do
+  let(:strategy) { OmniAuth::Strategies::Matique.new({}) }
+
   def setup
-    super
     @access_token = stub('OAuth2::AccessToken')
+    strategy.stubs(:access_token).returns(@access_token)
   end
 
-  test 'performs a GET to https://lvh.me' do
-    strategy.stubs(:access_token).returns(@access_token)
+  it 'performs a GET to https://lvh.me' do
     @access_token.expects(:get).with('info').
       returns(stub_everything('OAuth2::Response'))
     strategy.raw_info
   end
 
-  test 'returns a Hash' do
-    strategy.stubs(:access_token).returns(@access_token)
+  it 'returns a Hash' do
     raw_response = stub('Faraday::Response')
     raw_response.stubs(:body).returns('{ "ohai": "thar" }')
     raw_response.stubs(:status).returns(200)
@@ -32,10 +32,10 @@ class RawInfoTest < StrategyTestCase
     assert_equal 'thar', strategy.raw_info['ohai']
   end
 
-  test 'returns an empty hash when the response is false' do
-    strategy.stubs(:access_token).returns(@access_token)
+  it 'returns an empty hash when the response is false' do
     oauth2_response = stub('OAuth2::Response', :parsed => false)
     @access_token.stubs(:get).with('info').returns(oauth2_response)
     assert_kind_of Hash, strategy.raw_info
   end
+
 end
