@@ -14,4 +14,21 @@ describe OmniAuth::Strategies::Matique do
 	strategy.client.options[:token_url]
   end
 
+  describe 'raw_info' do
+    def setup
+      @raw_info ||= {
+	'email' => 'test@example.com',
+	'id' => '123'
+      }
+      strategy.stubs(:raw_info).returns(@raw_info)
+    end
+
+    it 'uid returns the id from raw_info' do
+      assert_equal '123', strategy.uid
+    end
+
+    it 'access email from the raw_info' do
+      assert_equal 'test@example.com', strategy.info['email']
+    end
+  end
 end

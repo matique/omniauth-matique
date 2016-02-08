@@ -7,29 +7,6 @@ class StrategyTest < StrategyTestCase
   include OAuth2StrategyTests
 end
 
-class UidTest < StrategyTestCase
-  def setup
-    super
-    strategy.stubs(:raw_info).returns({ 'id' => '123' })
-  end
-
-  test 'returns the id from raw_info' do
-    assert_equal '123', strategy.uid
-  end
-end
-
-class InfoTestOptionalDataPresent < StrategyTestCase
-  def setup
-    super
-    @raw_info ||= { 'email' => 'test@example.com' }
-    strategy.stubs(:raw_info).returns(@raw_info)
-  end
-
-  test 'returns the email' do
-    assert_equal 'test@example.com', strategy.info['email']
-  end
-end
-
 describe OmniAuth::Strategies::Matique do
   let(:over) do
     OmniAuth::Strategies::Matique.new('KEY', 'SECRET',
