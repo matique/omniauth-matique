@@ -5,6 +5,14 @@ require 'omniauth-matique'
 
 describe OmniAuth::Strategies::Matique do
   let(:strategy) { OmniAuth::Strategies::Matique.new({}) }
+  let(:over)     { OmniAuth::Strategies::Matique.new('KEY', 'SECRET',
+      client_options: {
+	site: 'S',
+	authorize_url: 'A',
+	token_url: 'T'
+      }
+    )
+  }
 
   it 'Client has correct default client_options' do
     assert_equal 'https://lvh.me', strategy.client.site
@@ -12,6 +20,12 @@ describe OmniAuth::Strategies::Matique do
 	strategy.client.options[:authorize_url]
     assert_equal 'https://lvh.me/auth/matique/access_token',
 	strategy.client.options[:token_url]
+  end
+
+  it "client options should be overwritable" do
+    assert_equal 'S', over.options.client_options.site
+    assert_equal 'A', over.options.client_options.authorize_url
+    assert_equal 'T', over.options.client_options.token_url
   end
 
   describe 'raw_info' do
