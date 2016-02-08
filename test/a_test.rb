@@ -6,12 +6,13 @@ class StrategyTest < StrategyTestCase
 end
 
 class ClientTest < StrategyTestCase
-  test 'has correct Clef site' do
-    assert_equal 'https://clef.io/api/v1', strategy.client.site
+  test 'has correct Matique site' do
+    assert_equal 'https://lvh.me', strategy.client.site
   end
 
   test 'has correct token url' do
-    assert_equal 'authorize', strategy.client.options[:token_url]
+    assert_equal 'https://lvh.me/auth/matique/access_token',
+	strategy.client.options[:token_url]
   end
 end
 
@@ -36,41 +37,6 @@ class InfoTestOptionalDataPresent < StrategyTestCase
   test 'returns the email' do
     assert_equal 'test@example.com', strategy.info['email']
   end
-
-  test 'returns the first name' do
-    @raw_info['first_name'] = 'Fred'
-    assert_equal 'Fred', strategy.info['first_name']
-  end
-
-  test 'returns the last name' do
-    @raw_info['last_name'] = 'Smith'
-    assert_equal 'Smith', strategy.info['last_name']
-  end
-
-  test 'returns the phone number' do
-    @raw_info['phone_number'] = '1119991111'
-    assert_equal '1119991111', strategy.info['phone_number']
-  end
-end
-
-class InfoTestOptionalDataNotPresent < StrategyTestCase
-  def setup
-    super
-    @raw_info ||= { 'email' => 'test@example.com' }
-    strategy.stubs(:raw_info).returns(@raw_info)
-  end
-
-  test 'has no first name key' do
-    refute_has_key 'first_name', strategy.info
-  end
-
-  test 'has no last name key' do
-    refute_has_key 'last_name', strategy.info
-  end
-
-  test 'has no phone number key' do
-    refute_has_key 'phone_number', strategy.info
-  end
 end
 
 class RawInfoTest < StrategyTestCase
@@ -79,9 +45,10 @@ class RawInfoTest < StrategyTestCase
     @access_token = stub('OAuth2::AccessToken')
   end
 
-  test 'performs a GET to https://clef.io/api/v1/info' do
+  test 'performs a GET to https://lvh.me' do
     strategy.stubs(:access_token).returns(@access_token)
-    @access_token.expects(:get).with('info').returns(stub_everything('OAuth2::Response'))
+    @access_token.expects(:get).with('info').
+      returns(stub_everything('OAuth2::Response'))
     strategy.raw_info
   end
 
