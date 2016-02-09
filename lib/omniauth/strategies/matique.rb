@@ -14,7 +14,6 @@ module OmniAuth
       uid { raw_info['id'] }
 
       info do
-p 22222222
 #        { 'email' => raw_info['info']['email'] }
 	{ 'email' => raw_info['email'] }
       end
@@ -24,9 +23,6 @@ p 22222222
       end
 
       def raw_info
-## github
-#access_token.options[:mode] = :query
-#@raw_info ||= access_token.get('user').parsed
 	@raw_info ||= access_token.get('info').parsed || {}
       end
 
