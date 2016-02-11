@@ -15,10 +15,10 @@ describe OmniAuth::Strategies::Matique do
   }
 
   it 'Client has correct default client_options' do
-    assert_equal 'https://lvh.me', strategy.client.site
-    assert_equal 'https://lvh.me/auth/matique/authorize',
+    assert_equal 'https://login.p.matique.de', strategy.client.site
+    assert_equal 'https://login.p.matique.de/auth/matique/authorize',
 	strategy.client.options[:authorize_url]
-    assert_equal 'https://lvh.me/auth/matique/access_token',
+    assert_equal 'https://login.p.matique.de/auth/matique/access_token',
 	strategy.client.options[:token_url]
   end
 

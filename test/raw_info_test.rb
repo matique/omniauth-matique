@@ -3,9 +3,9 @@
 require 'test_helper'
 require 'omniauth-matique'
 
-class StrategyTest < StrategyTestCase
-  include OAuth2StrategyTests
-end
+#class StrategyTest < StrategyTestCase
+#  include OAuth2StrategyTests
+#end
 
 describe OmniAuth::Strategies::Matique, 'raw_info test' do
   let(:strategy)     { OmniAuth::Strategies::Matique.new({}) }
