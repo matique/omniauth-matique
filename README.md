@@ -20,23 +20,36 @@ Then `bundle install`.
 ## Usage
 
 Here's an example for adding the middleware to a
-Rails app in `config/initializers/omniauth.rb`:
+Rails app (config/initializers/omniauth.rb):
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :matique, ENV["CLIENT_ID"], ENV["CLIENT_SECRET"]
 end
+OmniAuth.config.logger = Rails.logger
 ```
 
-You can now access the OmniAuth Matique URL: `/auth/matique`
+Here's an routing example for a Rails app (config/routes.rb):
+
+```ruby
+post '/auth/:provider/callback', to: 'sessions#create'
+get '/auth/:provider/callback', to: 'sessions#create'
+get '/auth/failure', to: 'sessions#failure'
+
+get '/auth/login', to: 'sessions#new', as: :login
+get '/auth/logout', to: 'sessions#destroy', as: :logout
+```
+
+You can now access the OmniAuth Matique URL: /auth/matique
 
 ## Credits
 
 Inspiration from the web.
-Look for:
+See also:
 
-- https://github.com/intridea/omniauth.git
 - http://intridea.github.io/omniauth/
 - http://blog.joshsoftware.com/2010/12/16/multiple-applications-with-devise-omniauth-and-single-sign-on/
+- http://codetheory.in/rails-devise-omniauth-sso/
+- https://github.com/intridea/omniauth.git
 
 Copyright (c) 2016 [Dittmar Krall], released under the MIT license.
