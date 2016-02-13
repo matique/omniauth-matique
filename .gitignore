@@ -1,0 +1,11 @@
+Gemfile.lock
+
+*.log
+*.sql
+*.sqlite
+
+pkg/
+*.gem
+*.gemfile.lock
+
+.bundle/
