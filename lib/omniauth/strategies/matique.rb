@@ -3,19 +3,21 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
-      SITE = 'https://login.p.matique.de'
+
+#      SITE = 'https://login.p.matique.de'
+      SITE = 'http://localhost:3010'
       STRATEGY = 'matique'
 
       option :client_options, {
 	site: SITE,
-	authorize_url: "#{SITE}/auth/#{STRATEGY}/authorize",
-	token_url: "#{SITE}/auth/#{STRATEGY}/access_token"
+	authorize_url: "/auth/#{STRATEGY}/authorize",
+#        token_url: "/auth/#{STRATEGY}/access_token"
       }
 
       uid { raw_info['id'] }
 
       info do
-	{ 'email' => raw_info['email'] }
+       { 'email' => raw_info['info']['email'] }
       end
 
       extra do
@@ -23,7 +25,9 @@ module OmniAuth
       end
 
       def raw_info
-	@raw_info ||= access_token.get('info').parsed || {}
+       @raw_info ||= access_token.get(
+	 "/auth/#{STRATEGY}/info.json?oauth_token=#{access_token.token}").
+	 parsed || {}
       end
 
     end

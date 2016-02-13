@@ -12,7 +12,7 @@ Strategy to authenticate with matique UG via OAuth2 in OmniAuth.
 Add to your `Gemfile`:
 
 ```ruby
-gem "omniauth-matique"
+gem 'omniauth-matique'
 ```
 
 Then `bundle install`.
@@ -40,7 +40,12 @@ get '/auth/login', to: 'sessions#new', as: :login
 get '/auth/logout', to: 'sessions#destroy', as: :logout
 ```
 
+You must take care about (see also sample "app"):
+- app/controllers/sessions_controller.rb
+- config/initializers/omniauth.rb
+
 You can now access the OmniAuth Matique URL: /auth/matique
+
 
 ## Credits
 
