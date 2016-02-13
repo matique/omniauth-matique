@@ -32,7 +32,7 @@ describe OmniAuth::Strategies::Matique do
     def setup
       super
       @raw_info ||= {
-	'email' => 'test@example.com',
+	'info' => {'email' => 'test@example.com'},
 	'id' => '123'
       }
       strategy.stubs(:raw_info).returns(@raw_info)
