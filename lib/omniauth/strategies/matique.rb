@@ -5,7 +5,8 @@ module OmniAuth
     class Matique < OmniAuth::Strategies::OAuth2
 
 #      SITE = 'https://login.p.matique.de'
-      SITE = 'login.lvh.me'
+      SITE = 'http://lvh.me:3010'
+#      SITE = 'http://localhost:3010'
       STRATEGY = 'matique'
 
       option :client_options, {
