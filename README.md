@@ -32,8 +32,7 @@ OmniAuth.config.logger = Rails.logger
 Here's an routing example for a Rails app (config/routes.rb):
 
 ```ruby
-post '/auth/:provider/callback', to: 'sessions#create'
-get '/auth/:provider/callback', to: 'sessions#create'
+match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 get '/auth/failure', to: 'sessions#failure'
 
 get '/auth/login', to: 'sessions#new', as: :login
