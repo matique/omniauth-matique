@@ -3,8 +3,6 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
-
-# AuthUrl = ENV["HEROKU_AUTH_URL"] || "https://id.heroku.com"
 #      SITE = 'https://login.matique.de'
       SITE = 'http://localhost:3010'
       STRATEGY = 'matique'
@@ -18,8 +16,7 @@ module OmniAuth
       uid { raw_info['id'] }
 
       info do
-#       { 'email' => raw_info['info']['email'] }
-       { 'email' => raw_info['email'] }
+	{ 'email' => raw_info['email'] }
       end
 
       extra do
@@ -28,7 +25,7 @@ module OmniAuth
 
       def raw_info
        @raw_info ||= access_token.get(
-	 "/auth/#{STRATEGY}/info.json?oauth_token=#{access_token.token}").
+	 "/auth/matique/user.json?oauth_token=#{access_token.token}").
 	 parsed || {}
       end
 
