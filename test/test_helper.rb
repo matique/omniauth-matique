@@ -14,5 +14,3 @@ def refute_has_key(key, hash, msg = nil)
   msg = message(msg) { "Expected #{hash.inspect} not to have key #{key.inspect}" }
   refute hash.has_key?(key), msg
 end
-
-Dir[File.expand_path('../support/**/*', __FILE__)].each {|f| require f }
