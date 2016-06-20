@@ -3,7 +3,9 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
-      SITE = 'https://lvh.me'
+#      SITE = 'https://lvh.me'
+#      SITE = 'https://login.matique.de'
+      SITE = 'http://localhost:3010'
 
       option :client_options, {
 	site: SITE,
