@@ -4,14 +4,14 @@ module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
 
-#      SITE = 'https://login.p.matique.de'
+#      SITE = 'https://login.matique.de'
       SITE = 'http://localhost:3010'
       STRATEGY = 'matique'
 
       option :client_options, {
 	site: SITE,
 	authorize_url: "/auth/#{STRATEGY}/authorize",
-#        token_url: "/auth/#{STRATEGY}/access_token"
+	token_url: "/auth/#{STRATEGY}/access_token"
       }
 
       uid { raw_info['id'] }

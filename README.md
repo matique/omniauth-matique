@@ -1,5 +1,5 @@
-RowsController
-==============
+Omniauth-Matique
+================
 [![Gem Version](https://badge.fury.io/rb/omniauth-matique.svg)](https://badge.fury.io/rb/omniauth-matique)
 [![Build Status](https://travis-ci.org/matique/omniauth-matique.png?branch=master)](https://travis-ci.org/matique/omniauth-matique)
 
