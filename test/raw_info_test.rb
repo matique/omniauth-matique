@@ -3,10 +3,6 @@
 require 'test_helper'
 require 'omniauth-matique'
 
-#class StrategyTest < StrategyTestCase
-#  include OAuth2StrategyTests
-#end
-
 describe OmniAuth::Strategies::Matique, 'raw_info test' do
   let(:strategy)     { OmniAuth::Strategies::Matique.new({}) }
   let(:access_token) { stub('OAuth2::AccessToken') }
