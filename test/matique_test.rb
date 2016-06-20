@@ -46,6 +46,8 @@ describe OmniAuth::Strategies::Matique do
 
     it 'access email from the raw_info' do
       assert_equal 'test@example.com', strategy.info['email']
+     # coverage
+      refute_nil strategy.extra['raw_info']
     end
   end
 end
