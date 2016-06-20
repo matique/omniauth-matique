@@ -3,6 +3,7 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
+# AuthUrl = ENV["HEROKU_AUTH_URL"] || "https://id.heroku.com"
 #      SITE = 'https://login.matique.de'
       SITE = 'http://localhost:3010'
       STRATEGY = 'matique'
