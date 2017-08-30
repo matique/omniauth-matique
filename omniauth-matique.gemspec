@@ -5,8 +5,10 @@ require 'omniauth-matique/version'
 Gem::Specification.new do |s|
   s.name          = 'omniauth-matique'
   s.version       = OmniAuth::Matique::VERSION
-  s.description   = %q{OmniAuth strategy for Matique.}
-  s.summary       = s.description
+  s.summary       = 'OmniAuth strategy for matique'
+  s.description   = <<-'END'
+    Strategy to authenticate with matique UG via OAuth2 in OmniAuth.
+  END
   s.authors       = ['Dittmar Krall']
   s.email         = ['dittmar.krall@matique.de']
   s.homepage      = 'https://github.com/matique/omniauth-matique'
@@ -20,5 +22,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'bundler', '~> 1'
   s.add_development_dependency 'rake', '~> 12'
-  s.add_dependency 'omniauth-oauth2'
+  s.add_dependency 'omniauth-oauth2', '~> 1'
 end
