@@ -1,26 +1,24 @@
-require File.expand_path('../lib/omniauth-matique/version', __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'omniauth-matique/version'
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Dittmar Krall"]
-  gem.email         = ["dittmar.krall@matique.de"]
-  gem.description   = %q{OmniAuth strategy for Matique.}
-  gem.summary       = gem.description
-  gem.homepage      = "https://github.com/matique/omniauth-matique"
-  gem.license       = "MIT"
+Gem::Specification.new do |s|
+  s.name          = 'omniauth-matique'
+  s.version       = OmniAuth::Matique::VERSION
+  s.description   = %q{OmniAuth strategy for Matique.}
+  s.summary       = s.description
+  s.authors       = ['Dittmar Krall']
+  s.email         = ['dittmar.krall@matique.de']
+  s.homepage      = 'https://github.com/matique/omniauth-matique'
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  gem.files         = `git ls-files`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  gem.name          = "omniauth-matique"
-  gem.require_paths = ["lib"]
-  gem.version       = OmniAuth::Matique::VERSION
+  s.license       = 'MIT'
+  s.platform      = Gem::Platform::RUBY
 
-#  gem.add_dependency 'omniauth'
-  gem.add_dependency 'omniauth-oauth2'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'rack-test'
-  gem.add_development_dependency 'simplecov'
-  gem.add_development_dependency 'minitest'
-  gem.add_development_dependency 'mocha'
-  gem.add_development_dependency 'rake'
+  s.files         = `git ls-files -z`.split("\x0")
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
+  s.require_paths = ['lib']
+
+  s.add_development_dependency 'bundler', '~> 1'
+  s.add_development_dependency 'rake', '~> 12'
+  s.add_dependency 'omniauth-oauth2'
 end

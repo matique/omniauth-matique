@@ -56,4 +56,4 @@ See also:
 - http://codetheory.in/rails-devise-omniauth-sso/
 - https://github.com/intridea/omniauth.git
 
-Copyright (c) 2016 [Dittmar Krall], released under the MIT license.
+Copyright (c) [Dittmar Krall], released under the MIT license.
