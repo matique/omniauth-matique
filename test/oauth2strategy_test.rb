@@ -15,6 +15,7 @@ describe OmniAuth::Strategies do
   end
 
   def strategy
+    @options ||= nil
     @strategy ||= begin
       args = [@client_id, @client_secret, @options].compact
       OmniAuth::Strategies::Matique.new(nil, *args).tap do |strategy|

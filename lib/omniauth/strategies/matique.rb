@@ -4,14 +4,14 @@ module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
 # AuthUrl = ENV["HEROKU_AUTH_URL"] || "https://id.heroku.com"
-#      SITE = 'https://login.matique.de'
-      SITE = 'http://localhost:3010'
+      AUTH_URL = ENV["AUTH_URL"] || 'http://localhost:3010'
+#      AUTH_URL = 'https://login.matique.de'
       STRATEGY = 'matique'
 
       option :client_options, {
-	site: SITE,
-	authorize_url: "#{SITE}/auth/#{STRATEGY}/authorize",
-	token_url: "#{SITE}/auth/#{STRATEGY}/access_token"
+	site: AUTH_URL,
+	authorize_url: "#{AUTH_URL}/auth/#{STRATEGY}/authorize",
+	token_url: "#{AUTH_URL}/auth/#{STRATEGY}/access_token"
       }
 
       uid { raw_info['id'] }
