@@ -17,6 +17,7 @@ end
 def run_it(type, file)
   case type
   when 'test';  run %Q{ruby -I"lib:test" -rubygems #{file}}
+#  when 'test';  run %Q{rails test #{file}}
   when 'spec';  run %Q{rspec -X #{file}}
   else;         puts "#{H} unknown type: #{type}, file: #{file}"
   end
@@ -24,6 +25,7 @@ end
 
 def run_all_tests
   puts "\n#{HH} Running all tests #{HH}\n"
+#  system "spring stop"
   %w{test}.each { |dir| run "rake #{dir} RAILS_ENV=test"  if  File.exists?(dir) }
   %w{spec}.each { |dir| run "rake #{dir} RAILS_ENV=test"  if  File.exists?(dir) }
 end
@@ -41,8 +43,8 @@ end
   watch("#{type}/.*/*_#{type}\.rb")   { |match| run_it type, match[0] }
 }
 %w{rb erb haml slim}.each { |type|
-  watch("app/.*/.*\.#{type}") { |m|
-    run_matching_files("#{m[0].split('/').at(2).split('.').first}")
+  watch("app/.*/(.*)\.#{type}") { |match|
+    run_matching_files(match[1])
   }
 }
 
