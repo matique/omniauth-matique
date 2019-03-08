@@ -4,4 +4,3 @@ coverage/
 *.gem
 *.log
 *.lock
-*.sqlite
