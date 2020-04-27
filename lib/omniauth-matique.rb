@@ -1,2 +1,4 @@
-require "omniauth-matique/version"
+# rubocop: disable all
+
+require 'omniauth-matique/version'
 require 'omniauth/strategies/matique'
