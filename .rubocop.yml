@@ -6,3 +6,6 @@ AllCops:
     - 'lib/**/*.rb'
   Exclude:
     - 'test/**/*'
+
+Layout/HashAlignment:
+  Enabled: false

@@ -1,5 +1,9 @@
-require 'simplecov'
-SimpleCov.start
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter '/test/'
+  end
+end
 
 require 'bundler/setup'
 require 'minitest/autorun'
