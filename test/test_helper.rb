@@ -7,7 +7,7 @@ end
 
 require 'bundler/setup'
 require 'minitest/autorun'
-require 'mocha/setup'
+require 'mocha/minitest'
 require 'omniauth/strategies/matique'
 
 OmniAuth.config.test_mode = true

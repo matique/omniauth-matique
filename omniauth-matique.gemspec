@@ -20,10 +20,10 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'bundler', '~> 2'
+  s.add_development_dependency 'rake', '~> 13'
   s.add_dependency 'omniauth-oauth2', '~> 1'
 
-  s.add_development_dependency 'minitest'
-  s.add_development_dependency 'mocha'
+  s.add_development_dependency 'minitest', '~> 5'
+  s.add_development_dependency 'mocha', '~> 1'
 end
