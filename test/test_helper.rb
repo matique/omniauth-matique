@@ -1,14 +1,14 @@
-if ENV['COVERAGE']
-  require 'simplecov'
+if ENV["COVERAGE"]
+  require "simplecov"
   SimpleCov.start do
-    add_filter '/test/'
+    add_filter "/test/"
   end
 end
 
-require 'bundler/setup'
-require 'minitest/autorun'
-require 'mocha/minitest'
-require 'omniauth/strategies/matique'
+require "bundler/setup"
+require "minitest/autorun"
+require "mocha/minitest"
+require "omniauth/strategies/matique"
 
 OmniAuth.config.test_mode = true
 
