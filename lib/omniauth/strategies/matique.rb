@@ -5,7 +5,7 @@ require "omniauth-oauth2"
 module OmniAuth
   module Strategies
     class Matique < OmniAuth::Strategies::OAuth2
-      # AUTH_URL = 'https://login.matique.de'
+      # AUTH_URL = 'https://login.matiq.com'
       AUTH_URL = ENV["AUTH_URL"] || "http://localhost:3010"
       STRATEGY = "matique"
 

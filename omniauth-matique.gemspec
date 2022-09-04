@@ -5,12 +5,13 @@ require "omniauth-matique/version"
 Gem::Specification.new do |s|
   s.name = "omniauth-matique"
   s.version = OmniAuth::Matique::VERSION
-  s.summary = "OmniAuth strategy for matique"
+  s.summary = "OmniAuth strategy for matiq"
   s.description = <<-'END'
-    Strategy to authenticate with matique UG via OAuth2 in OmniAuth.
+    Strategy to authenticate with matiq UG (haftungsbeschränkt)
+    via OAuth2 in OmniAuth.
   END
   s.authors = ["Dittmar Krall"]
-  s.email = ["dittmar.krall@matique.de"]
+  s.email = ["dittmar.krall@matiq.com"]
   s.homepage = "https://github.com/matique/omniauth-matique"
 
   s.license = "MIT"
@@ -19,7 +20,6 @@ Gem::Specification.new do |s|
   s.metadata["source_code_uri"] = "https://github.com/matique/omniauth-matique"
 
   s.files = `git ls-files -z`.split("\x0")
-  s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
   s.add_development_dependency "bundler"

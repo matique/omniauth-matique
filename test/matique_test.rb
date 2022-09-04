@@ -15,7 +15,7 @@ describe OmniAuth::Strategies::Matique do
   }
 
   it "Client has correct default client_options" do
-    #    site = "https://login.matique.de"
+    #    site = "https://login.matiq.com"
     site = "http://localhost:3010"
     assert_equal site.to_s, strategy.client.site
     assert_equal "#{site}/auth/matique/authorize",

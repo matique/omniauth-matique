@@ -4,7 +4,8 @@ Omniauth-Matique
 
 # OmniAuth Matique Strategy
 
-Strategy to authenticate with matique UG via OAuth2 in OmniAuth.
+Strategy to authenticate with matiq UG (haftungsbeschränkt)
+via OAuth2 in OmniAuth.
 
 ## Installation
 
