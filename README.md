@@ -1,5 +1,5 @@
-Omniauth-Matique
-================
+# Omniauth-Matique
+
 [![Gem Version](https://badge.fury.io/rb/omniauth-matique.svg)](https://badge.fury.io/rb/omniauth-matique)
 
 # OmniAuth Matique Strategy
@@ -9,13 +9,12 @@ via OAuth2 in OmniAuth.
 
 ## Installation
 
-Add to your `Gemfile`:
-
+As usual:
 ```ruby
-gem 'omniauth-matique'
+# Gemfile
+gem "omniauth-matique"
 ```
-
-Then `bundle install`.
+and run "bundle install".
 
 ## Usage
 
@@ -56,4 +55,9 @@ See also:
 - http://codetheory.in/rails-devise-omniauth-sso/
 - https://github.com/intridea/omniauth.git
 
-Copyright (c) 2016..2019 Dittmar Krall, released under the MIT license.
+## Miscellaneous
+
+Copyright (c) 2016-2022 Dittmar Krall (www.matiq.com),
+released under the MIT license:
+
+* https://opensource.org/licenses/MIT
