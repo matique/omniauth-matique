@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = "omniauth-matique"
   s.version = OmniAuth::Matique::VERSION
   s.summary = "OmniAuth strategy for matiq"
-  s.description = <<-'END'
+  s.description = <<-END
     Strategy to authenticate with matiq UG (haftungsbeschränkt)
     via OAuth2 in OmniAuth.
   END
