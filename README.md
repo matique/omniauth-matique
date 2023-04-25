@@ -57,7 +57,7 @@ See also:
 
 ## Miscellaneous
 
-Copyright (c) 2016-2022 Dittmar Krall (www.matiq.com),
+Copyright (c) 2016-2023 Dittmar Krall (www.matiq.com),
 released under the MIT license:
 
 * https://opensource.org/licenses/MIT

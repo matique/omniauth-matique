@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   s.files = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "bundler"
   s.add_development_dependency "rake", "~> 13"
   s.add_dependency "omniauth-oauth2", "~> 1"
 
