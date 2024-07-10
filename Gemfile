@@ -4,7 +4,9 @@ gemspec
 gem "rails"
 
 group :test do
-  gem "observr"
+  gem "cuco"
   gem "rubocop", require: false
   gem "simplecov", require: false
+  gem "spring"
+  gem "sqlite3", "~> 1.0"
 end
