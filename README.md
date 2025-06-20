@@ -6,10 +6,6 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
 
-[![Gem Version](https://badge.fury.io/rb/omniauth-matique.svg)](https://badge.fury.io/rb/omniauth-matique)
-[![GEM Downloads](https://img.shields.io/gem/dt/omniauth-matique?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/omniauth-matique)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
-
 # OmniAuth Matique Strategy
 
 Strategy to authenticate with matiq UG (haftungsbeschränkt)
