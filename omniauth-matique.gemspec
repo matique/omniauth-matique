@@ -21,10 +21,10 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
+  s.required_ruby_version = "~> 3"
 
   s.add_development_dependency "rake", "~> 13"
   s.add_dependency "omniauth-oauth2", "~> 1"
 
   s.add_development_dependency "minitest", "~> 5"
-  s.add_development_dependency "mocha", "~> 1"
 end

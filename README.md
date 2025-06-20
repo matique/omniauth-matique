@@ -1,6 +1,14 @@
 # Omniauth-Matique
 
+[![Gem Version](https://img.shields.io/gem/v/omniauth-matique?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/omniauth-matique)
+[![Downloads](https://img.shields.io/gem/dt/omniauth-matique?color=168AFE&logo=rubygems&logoColor=FE1616)](https://rubygems.org/gems/omniauth-matique)
+[![GitHub Build](https://img.shields.io/github/actions/workflow/status/matique/omniauth-matique/rake.yml?logo=github)](https://github.com/matique/omniauth-matique/actions/workflows/rake.yml)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
+
 [![Gem Version](https://badge.fury.io/rb/omniauth-matique.svg)](https://badge.fury.io/rb/omniauth-matique)
+[![GEM Downloads](https://img.shields.io/gem/dt/omniauth-matique?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/omniauth-matique)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
 
 # OmniAuth Matique Strategy
 
@@ -57,7 +65,5 @@ See also:
 
 ## Miscellaneous
 
-Copyright (c) 2016-2023 Dittmar Krall (www.matiq.com),
-released under the MIT license:
-
-* https://opensource.org/licenses/MIT
+Copyright (c) 2016-2025 Dittmar Krall (www.matiq.com),
+released under the [MIT license](https://opensource.org/licenses/MIT).

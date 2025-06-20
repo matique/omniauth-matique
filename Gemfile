@@ -8,5 +8,6 @@ group :test do
   gem "rubocop", require: false
   gem "simplecov", require: false
   gem "spring"
-  gem "sqlite3", "~> 1.0"
+  gem "sqlite3"
+  gem "mocha", require: false # for a sub-gem
 end

@@ -8,14 +8,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ["3.2", 3.3]
+        ruby_version: [head, "3.4", "3.2"]
         gemfile:
           - Gemfile
-#          - gemfiles/Gemfile.rails-7.1
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -23,6 +22,7 @@ jobs:
           bundler-cache: true
       - name: Bundle install
         run: |
+          bundle config set frozen false
           bundle config path /home/runner/bundle
           bundle install
           bundle update
